@@ -26,12 +26,17 @@
             </div>
         </form>
         <ul class="list-group">
-            <% tasks.forEach(task => { %>
-                <li class="list-group-item">
-                    &#x1F600;<%= task %>
+            <% tasks.forEach((task, index) => { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= task %>
+                    <form action="/removeTask" method="post" style="display: inline;">
+                        <input type="hidden" name="index" value="<%= index %>">
+                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                    </form>
                 </li>
             <% }); %>
         </ul>
+        
         
     </div>
 </body>

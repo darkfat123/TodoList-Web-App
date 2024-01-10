@@ -30,6 +30,17 @@ app.post('/addTask', (req, res) => {
     res.redirect('/');
 });
 
+app.post('/removeTask', (req, res) => {
+    const taskIndex = req.body.index;
+    
+    // Ensure the index is within bounds
+    if (taskIndex >= 0 && taskIndex < tasks.length) {
+        tasks.splice(taskIndex, 1); // Remove the task at the specified index
+    }
+
+    res.redirect('/');
+});
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
