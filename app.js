@@ -43,6 +43,7 @@ app.get('/', (req, res) => {
 
 // Handle the form submission to add a new task
 app.post('/addTask', (req, res) => {
+    console.log("Add Task")
     const newTask = req.body.task;
     const tasks = getTasksForUser(req);
     tasks.push(newTask);
@@ -51,6 +52,7 @@ app.post('/addTask', (req, res) => {
 
 // Handle the form submission to remove a task
 app.post('/removeTask', (req, res) => {
+    console.log("Remove Task")
     const taskIndex = req.body.index;
     const tasks = getTasksForUser(req);
 
@@ -62,6 +64,6 @@ app.post('/removeTask', (req, res) => {
     res.redirect('/');
 });
 
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server is running at http://0.0.0.0:${port}`);
 });
