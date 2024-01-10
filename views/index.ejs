@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <style>
+        /* Your custom styles can go here */
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <form action="/addTask" method="post">
+            <div class="input-group my-3">
+                <input type="text" name="task" class="form-control" placeholder="New Task" required>
+                <div class="input-group-append mx-4">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </form>
+        <ul class="list-group">
+            <% tasks.forEach(task => { %>
+                <li class="list-group-item">
+                    &#x1F600;<%= task %>
+                </li>
+            <% }); %>
+        </ul>
+        
+    </div>
+</body>
+
+</html>
