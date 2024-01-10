@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const crypto = require('crypto'); // Moved crypto module import outside of the route handler
 const app = express();
 const port = 3000;
 
@@ -11,9 +12,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Generate a secure secret key for sessions
+const secretKey = crypto.randomBytes(32).toString('hex');
+console.log(secretKey);
+
 // Configure session
 app.use(session({
-    secret: '51234', // Change this to a random and secure value
+    secret: secretKey,
     resave: false,
     saveUninitialized: true,
 }));
@@ -33,10 +38,6 @@ const getTasksForUser = (req) => {
 // Render the index page with the user's to-do list
 app.get('/', (req, res) => {
     const tasks = getTasksForUser(req);
-    const crypto = require('crypto');
-    const secretKey = crypto.randomBytes(32).toString('hex');
-    console.log(secretKey);
-
     res.render('index', { tasks });
 });
 
