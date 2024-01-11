@@ -43,10 +43,14 @@ app.get('/', (req, res) => {
 
 // Handle the form submission to add a new task
 app.post('/addTask', (req, res) => {
-    console.log("Add Task")
+    console.log("Add Task");
     const newTask = req.body.task;
+    const newTaskTime = req.body.taskTime;
+    console.log("Add", req.body.task, "At", req.body.taskTime);
+
     const tasks = getTasksForUser(req);
-    tasks.push(newTask);
+    tasks.push({ task: newTask, time: newTaskTime });
+
     res.redirect('/');
 });
 
@@ -55,7 +59,7 @@ app.post('/removeTask', (req, res) => {
     console.log("Remove Task")
     const taskIndex = req.body.index;
     const tasks = getTasksForUser(req);
-
+    console.log("Remove", req.body.task);
     // Ensure the index is within bounds
     if (taskIndex >= 0 && taskIndex < tasks.length) {
         tasks.splice(taskIndex, 1); // Remove the task at the specified index

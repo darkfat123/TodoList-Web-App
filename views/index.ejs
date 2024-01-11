@@ -6,41 +6,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" type="images/icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        /* Your custom styles can go here */
+        @import url('https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap');
+
         body {
             padding: 20px;
+            font-family: 'Signika', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            background-color: #43766C;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        footer {
+            font-size: 16px;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        .first-container {
+            border: 2px solid black;
+            /* Set the border style, width, and color */
+            padding: 20px;
+            /* Optional: Add padding for better appearance */
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        .time-badge {
+            background-color: #43766C;
+        }
+
+        .add-btn {
+            background-color: #43766C;
+            color: white;
+        }
+
+        .task-form {
+            background-color: #EEF0E5;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <form action="/addTask" method="post">
-            <div class="input-group my-3">
-                <input type="text" name="task" class="form-control" placeholder="New Task" required>
-                <div class="input-group-append mx-4">
-                    <button type="submit" class="btn btn-primary">Add</button>
+    <div class="first-container container">
+        <script>
+            // create a function to update the date and time
+            function updateDateTime() {
+                // create a new `Date` object
+                const now = new Date();
+                // get the current date and time as a string
+                const currentDateTime = now.toLocaleString();
+                // update the `textContent` property of the `span` element with the `id` of `datetime`
+                document.querySelector('#datetime').textContent = currentDateTime;
+            }
+            // call the `updateDateTime` function every second
+            setInterval(updateDateTime);
+        </script>
+        <div class="container">
+            <h1>📘 To-Do List</h1>
+            🕓 <span id="datetime"></span>
+            <form action="/addTask" method="post">
+                <div class="input-group my-3">
+                    <input type="text" name="task" class="task-form form-control py-3" placeholder="New Task" required>
+                    <input type="time" name="taskTime" class="task-form form-control py-3" placeholder="Time" required>
+
+                    <button type="submit" class="add-btn btn py-3 px-4">Add</button>
+
                 </div>
-            </div>
-        </form>
-        <ul class="list-group">
-            <% tasks.forEach((task, index) => { %>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <%= task %>
-                    <form action="/removeTask" method="post" style="display: inline;">
-                        <input type="hidden" name="index" value="<%= index %>">
-                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
-                    </form>
-                </li>
-            <% }); %>
-        </ul>
-        
-        
-        
-        
+            </form>
+        </div>
+        <div class="container">
+            <ul class="list-group">
+                <% tasks.forEach((task, index)=> { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="completed<%= index %>"
+                                    name="completed[]" value="<%= index %>" <% if (task.completed) { %>checked<% } %>>
+                                    <label class="form-check-label" for="completed<%= index %>">
+                                        <span class="time-badge badge  rounded-pill mx-2 mb-1">
+                                            <%= task.time %>
+                                        </span> <!-- Display the task time -->
+                                        <%= task.task %> <!-- Display the task name -->
+                                    </label>
+                            </div>
+                        </div>
+
+                        <form action="/removeTask" method="post" style="display: inline;">
+                            <input type="hidden" name="index" value="<%= index %>">
+                            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                        </form>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+
+
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                        <img src="https://avatars.githubusercontent.com/u/140593160?v=4" alt="Girl in a jacket"
+                            width="30" height="30">
+                    </a>
+                    <span class="mb-3 mb-md-0 text-body-secondary">Developed by darkfat</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-body-secondary" href="https://github.com/darkfat123"><i
+                                class="fa-brands fa-square-github"></i></a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="https://medium.com/@yookack_s"><i
+                                class="fa-brands fa-medium"></i></a></li>
+                    <li class="ms-3">
+                        <a class="text-body-secondary" href="mailto:foczza@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+            </footer>
+        </div>
     </div>
+
 </body>
 
 </html>
