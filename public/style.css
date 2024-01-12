@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap');
+
+body {
+    padding: 20px;
+    font-family: 'Signika', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    background-color: #43766C;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+footer {
+    font-size: 16px;
+}
+
+.container {
+    flex: 1;
+}
+
+.first-container {
+    border: 2px solid black;
+    /* Set the border style, width, and color */
+    padding: 20px;
+    /* Optional: Add padding for better appearance */
+    border-radius: 20px;
+    background-color: white;
+}
+
+.time-badge {
+    background-color: #43766C;
+}
+
+.add-btn {
+    background-color: #43766C;
+    color: white;
+}
+
+.task-form {
+    background-color: #EEF0E5;
+}

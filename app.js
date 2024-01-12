@@ -25,7 +25,7 @@ app.use(session({
 
 // Serve static files (like stylesheets) from the 'public' directory
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 // Dummy data for the to-do list
 const getTasksForUser = (req) => {
@@ -38,6 +38,7 @@ const getTasksForUser = (req) => {
 // Render the index page with the user's to-do list
 app.get('/', (req, res) => {
     const tasks = getTasksForUser(req);
+    console.log((__dirname + '/public'));
     res.render('index', { tasks });
 });
 
