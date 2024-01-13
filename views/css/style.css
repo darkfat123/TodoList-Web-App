@@ -13,6 +13,14 @@ h1 {
     font-weight: 700;
 }
 
+#datetime2 {
+    font-size: 18px;
+}
+
+#datetime {
+    font-size: 20px;
+}
+
 footer {
     font-size: 16px;
 }
@@ -41,4 +49,13 @@ footer {
 
 .task-form {
     background-color: #EEF0E5;
+}
+
+.check-box:checked {
+    border: 2px solid #43766C;
+    background-color: #43766C;
+}
+
+.checked {
+    background-color: #dddddd;
 }
