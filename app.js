@@ -1,7 +1,12 @@
+process.env.TZ = 'Asia/Bangkok';
+
 const express = require('express');
 const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
+const path = require('path')
 const session = require('express-session');
-const crypto = require('crypto'); // Moved crypto module import outside of the route handler
+const crypto = require('crypto');
+
 const app = express();
 const port = 3000;
 
@@ -23,9 +28,10 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-// Serve static files (like stylesheets) from the 'public' directory
+// Serve static files (like stylesheets) from the 'views' and 'bootstrap' directory
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/views'));
+
 
 
 // Dummy data for the to-do list
@@ -49,9 +55,9 @@ app.post('/addTask', (req, res) => {
     let newTaskTime = req.body.taskTime;
     console.log(newTaskTime);
     if (!newTaskTime.trim()) {
-        newTaskTime = "Time not specified.";
+        newTaskTime = "Time not specified";
     }
-    
+
     console.log("Add", req.body.task, "At", newTaskTime);
 
     const tasks = getTasksForUser(req);
@@ -67,10 +73,9 @@ app.post('/removeTask', (req, res) => {
     console.log("Remove Task")
     const taskIndex = req.body.index;
     const tasks = getTasksForUser(req);
-    console.log("Remove", req.body.task);
-    // Ensure the index is within bounds
+
     if (taskIndex >= 0 && taskIndex < tasks.length) {
-        tasks.splice(taskIndex, 1); // Remove the task at the specified index
+        tasks.splice(taskIndex, 1);
     }
 
     res.redirect('/');

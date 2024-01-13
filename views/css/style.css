@@ -13,10 +13,6 @@ h1 {
     font-weight: 700;
 }
 
-#datetime2 {
-    font-size: 18px;
-}
-
 #datetime {
     font-size: 20px;
 }
@@ -58,4 +54,22 @@ footer {
 
 .checked {
     background-color: #dddddd;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    #datetime {
+        font-size: 16px;
+    }
+
+    .time-badge {
+        margin-bottom: 2rem;
+    }
+    .list-group-item {
+        font-size: 14px;
+    }
+
 }

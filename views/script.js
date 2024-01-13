@@ -17,13 +17,6 @@ setInterval(() => updateDateTime('datetime', {
     hour12: true
 }));
 
-setInterval(() => updateDateTime('datetime2', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-}));
-
 
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.check-box');
@@ -35,3 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var checkboxes = document.querySelectorAll('.check-box');
+
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            var removeForm = this.closest('.list-group-item').querySelector('.remove-form');
+            if (this.checked) {
+                removeForm.style.display = 'inline';
+            } else {
+                removeForm.style.display = 'none';
+            }
+        });
+    });
+});
+
