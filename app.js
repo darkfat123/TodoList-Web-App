@@ -46,14 +46,21 @@ app.get('/', (req, res) => {
 app.post('/addTask', (req, res) => {
     console.log("Add Task");
     const newTask = req.body.task;
-    const newTaskTime = req.body.taskTime;
-    console.log("Add", req.body.task, "At", req.body.taskTime);
+    let newTaskTime = req.body.taskTime;
+    console.log(newTaskTime);
+    if (!newTaskTime.trim()) {
+        newTaskTime = "Time not specified.";
+    }
+    
+    console.log("Add", req.body.task, "At", newTaskTime);
 
     const tasks = getTasksForUser(req);
-    tasks.push({ task: newTask, time: newTaskTime });
+    tasks.push({ task: newTask, time: newTaskTime, timestamp: new Date().toISOString() });
 
     res.redirect('/');
 });
+
+
 
 // Handle the form submission to remove a task
 app.post('/removeTask', (req, res) => {
