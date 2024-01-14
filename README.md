@@ -26,7 +26,7 @@
 
 <img src="https://i.imgur.com/dBaSKWF.gif" height="30" width="100%">
 
-<img align="right" alt="Coding" width="400" src="https://media.tenor.com/whgQwNlVvNkAAAAi/xero-code.gif">
+<img align="right" alt="Coding" width="350" src="https://media.tenor.com/whgQwNlVvNkAAAAi/xero-code.gif">
 <h3 align="left">Languages and tools used in this web application:</h3>
 
 - Backend
