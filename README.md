@@ -13,9 +13,9 @@
     <br />
     <a href="https://github.com/github_username/repo_name">Website</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/darkfat123/TodoList-Web-App/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/darkfat123/TodoList-Web-App/issues">Request Feature</a>
   </p>
 </div>
 <img src="https://i.imgur.com/dBaSKWF.gif" height="30" width="100%">
