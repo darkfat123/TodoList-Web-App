@@ -44,6 +44,22 @@ const getTasksForUser = (req) => {
 
 // Render the index page with the user's to-do list
 app.get('/', (req, res) => {
+
+    // The code following comments is for a sample test.
+    /*const tasks1 = [
+        { timestamp: '2024-01-10T12:00:00', time: '10:00 AM', task: 'Do homework', completed: false },
+        { timestamp: '2024-01-10T15:30:00', time: '01:30 PM', task: 'Go to shopping', completed: false },
+        { timestamp: '2024-01-11T08:45:00', time: '08:45 AM', task: 'Play some game', completed: false },
+        { timestamp: '2024-01-12T10:35:00', time: '10:35 AM', task: 'Play with dogs', completed: false },
+        { timestamp: '2024-01-12T13:50:00', time: '', task: 'Learning Code', completed: false },
+        { timestamp: '2024-01-13T09:12:00', time: '', task: 'Go to school', completed: false },
+    ];
+    // Update tasks to replace empty or undefined time with "Time not specified"
+    const tasks = tasks1.map(task => ({
+        ...task,
+        time: task.time.trim() !== '' ? task.time : 'Time not specified'
+    }));*/
+
     const tasks = getTasksForUser(req);
     res.render('index', { tasks });
 });
@@ -57,9 +73,7 @@ app.post('/addTask', (req, res) => {
     if (!newTaskTime.trim()) {
         newTaskTime = "Time not specified";
     }
-
     console.log("Add", req.body.task, "At", newTaskTime);
-
     const tasks = getTasksForUser(req);
     tasks.push({ task: newTask, time: newTaskTime, timestamp: new Date().toISOString() });
 

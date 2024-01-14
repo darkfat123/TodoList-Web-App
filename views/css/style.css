@@ -38,6 +38,11 @@ footer {
     background-color: #43766C;
 }
 
+h5 {
+    margin-top: 16px;
+    font-size: 20px;
+}
+
 .add-btn {
     background-color: #43766C;
     color: white;
@@ -55,6 +60,9 @@ footer {
 .checked {
     background-color: #dddddd;
 }
+.footer-fa-img:hover {
+   color: #43766C;
+}
 
 @media (max-width: 500px) {
     h1 {
@@ -62,6 +70,10 @@ footer {
     }
 
     #datetime {
+        font-size: 16px;
+    }
+
+    h5 {
         font-size: 16px;
     }
 
