@@ -28,19 +28,19 @@
 <img src="https://i.imgur.com/dBaSKWF.gif" height="30" width="100%">
 <h4> Connect with me🤝: <h4>
   </hr>
-  <a href="https://www.linkedin.com/in/ratheshan-sathiyamoorthy-3aa2891b9/">
+  <a href="https://www.linkedin.com/in/supakorn-yookack-39a730289/">
    <img align="left" alt="Supakorn Yookack | Linkedin" width="30px" src="https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg" />
   </a>
-  <a href="mailto:lionratheshan@gmail.com">
+  <a href="mailto:supakorn.yookack@gmail.com">
     <img align="left" alt="Supakorn Yookack | Gmail" width="32px" src="https://www.vectorlogo.zone/logos/gmail/gmail-icon.svg" />
   </a>
-  <a href="https://twitter.com/Ratheshan_03">
-    <img align="left" alt="RSupakorn Yookack | Medium" width="32px" src="https://www.vectorlogo.zone/logos/medium/medium-tile.svg" />
+  <a href="https://medium.com/@yookack_s">
+    <img align="left" alt="Supakorn Yookack | Medium" width="32px" src="https://www.vectorlogo.zone/logos/medium/medium-tile.svg" />
   </a>
-   <a href="https://www.facebook.com/profile.php?id=100003874786181">
+   <a href="https://www.facebook.com/supakorn.yookaek/">
     <img align="left" alt="Supakorn Yookack | Facebook" width="32px" src="https://www.vectorlogo.zone/logos/facebook/facebook-tile.svg" />
   </a>
-   <a href="https://github.com/Ratheshan03">
+   <a href="https://github.com/darkfat123">
     <img align="left" alt="Supakorn Yookack | Github" width="32px" src="https://www.vectorlogo.zone/logos/github/github-tile.svg" />
   </a>
   <br>
