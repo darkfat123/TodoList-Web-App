@@ -10,11 +10,11 @@
     The responsive web application for seeing what to do today or tasks from the past that was added.
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">🌐 Website</a>
+    <a href="http://ec2-13-210-59-52.ap-southeast-2.compute.amazonaws.com:3001/" target="_blank">🌐 Website</a>
     ·
-    <a href="https://github.com/darkfat123/TodoList-Web-App/issues">🚨 Report Bug</a>
+    <a href="https://github.com/darkfat123/TodoList-Web-App/issues" target="_blank">🚨 Report Bug</a>
     ·
-    <a href="https://github.com/darkfat123/TodoList-Web-App/issues">✉️ Request Feature</a>
+    <a href="https://github.com/darkfat123/TodoList-Web-App/issues" target="_blank">✉️ Request Feature</a>
   </p>
 </div>
 <img src="https://i.imgur.com/dBaSKWF.gif" height="30" width="100%">
