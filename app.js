@@ -24,8 +24,12 @@ console.log(secretKey);
 // Configure session
 app.use(session({
     secret: secretKey,
-    resave: false,
+    resave: true,
     saveUninitialized: true,
+    cookie: {
+        secure: false, // Set to true if using HTTPS
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
+    },
 }));
 
 // Serve static files (like stylesheets) from the 'views' and 'bootstrap' directory
