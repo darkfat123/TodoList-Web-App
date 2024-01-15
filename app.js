@@ -8,7 +8,7 @@ const session = require('express-session');
 const crypto = require('crypto');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Use EJS as the view engine
 app.set('view engine', 'ejs');
